@@ -20,6 +20,13 @@
 
 관계형 디비에서는 일반적으로 2개의 간단한 식별자를 지정할 수 있는데요
   - Natural Keys, 이건 외부 시스템에의 의해서 유일함이 보장됩니다.(주민등록번호, 전화번호 등등)
-  - Surrogate Keys, IDENTITY, SEQUENCE와 같이 데이터베이스에 의해서 관리되는 키입니다.(Auto-increment)
+  - Surrogate Keys, IDENTITY, SEQUENCE와 같이 데이터베이스에 의해서 관리되는 키입니다.(Auto-increment, seqeunce 등등)
 
 저희가 지금 주제로 하고 있는 SEQUENCE는 Surrogate Keys에 해당됩니다.
+
+
+출처 : [https://vladmihalcea.com/jpa-entity-identifier-sequence/](https://vladmihalcea.com/jpa-entity-identifier-sequence/)  
+[https://vladmihalcea.com/hibernate-hidden-gem-the-pooled-lo-optimizer/](https://vladmihalcea.com/hibernate-hidden-gem-the-pooled-lo-optimizer/)  
+[https://www.baeldung.com/hibernate-identifiers](https://www.baeldung.com/hibernate-identifiers)
+[https://discourse.hibernate.org/t/generated-value-strategy-auto/6481](https://discourse.hibernate.org/t/generated-value-strategy-auto/6481)  
+[https://www.baeldung.com/hi-lo-algorithm-hibernate](https://www.baeldung.com/hi-lo-algorithm-hibernate)  
