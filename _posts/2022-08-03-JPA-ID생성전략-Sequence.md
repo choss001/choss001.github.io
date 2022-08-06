@@ -24,6 +24,10 @@
 
 저희가 지금 주제로 하고 있는 SEQUENCE는 Surrogate Keys에 해당됩니다.
 
+<br />
+<br />
+<br />
+<br />
 
 출처 : [https://vladmihalcea.com/jpa-entity-identifier-sequence/](https://vladmihalcea.com/jpa-entity-identifier-sequence/)  
 [https://vladmihalcea.com/hibernate-hidden-gem-the-pooled-lo-optimizer/](https://vladmihalcea.com/hibernate-hidden-gem-the-pooled-lo-optimizer/)  
