@@ -8,3 +8,6 @@
 ### JPA entity identifier annotations
 
 우리가 식별자 생성 과정에서 우리가 조작할 수 있는 Enum Values와 annotations JPA 명세서는 다음과 같습니다.
+<p align="center">
+  <img src="/images/identifier/SequenceGenerator.png" alt="book" width="1200"/>
+</p>  
