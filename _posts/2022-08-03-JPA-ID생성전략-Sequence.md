@@ -41,6 +41,8 @@ GenerationType Enum은 4개의 엔티티 식별자 전략이 있습니다.
 
 
 spring cloud contract vs pact
+https://martinfowler.com/articles/consumerDrivenContracts.html  
+https://www.techtarget.com/searchitoperations/definition/mutation-testing  
 
 <br />
 <br />
