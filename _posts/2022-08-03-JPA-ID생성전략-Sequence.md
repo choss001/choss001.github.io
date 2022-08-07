@@ -24,6 +24,24 @@
 
 저희가 지금 주제로 하고 있는 SEQUENCE는 Surrogate Keys에 해당됩니다.
 
+
+GenerationType Enum은 4개의 엔티티 식별자 전략이 있습니다.
+
+  - IDENTITY 전략은 MySQL의 AUTO_INCREMENT처럼 테이블 식별자 컬럼을 사용합니다..  
+  만약 관계형 데이터베이스가 SEQUENCE를 지원한다면 JPA와 하이버네이트를 위해서 SEQUENCE를 쓰는 것이 추천됩니다  
+  왜냐하면 하이버네이스는 엔티티가 IDENTITY 전략을 취하고 있다면 JDBC 배칭을 사용하지 못하기 때문입니다.  
+  
+  - SEQUENCE 전략은 식별자 값을 생성하는데 있어서 데이터베이스 시퀀스 객체를 사용합니다.  
+  이 전략은 JPA와 Hibernate를 사용한다면 가장 좋은 식별자 생성 전략입니다.
+  
+  -  TABLE 전략은 데이터베이스 시퀀스 생성을 분리된 테이블로 모방합니다.  
+  이 전략은 추천되지 않습니다. 따라서 안쓰는게 좋습니다.
+  
+  -  AUTO 전략은 데이터 베이스따라서 위에 3개의 전략중 하나를 선택합니다.
+
+
+spring cloud contract vs pact
+
 <br />
 <br />
 <br />
