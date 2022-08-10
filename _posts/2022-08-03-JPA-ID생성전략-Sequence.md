@@ -47,7 +47,7 @@
  - Identity는 어플리케이션의 의해서 관리될수 없지만 Sequence는 어플리케이션 코드로 제어가 가능합니다.
  - 만약 컬럼이 Identity로 마크되어있다면 이 컬럼에 직접적으로 데이터를 넣을수 없지만 시퀀스 오브젝트는 테이블에 의존하지 않기 때문에 해당 컬럼에 어떤 데이터도 인서트 할 수 있습니다.
  - Identity는 데이터를 삽입하기전에 값을 가져올 수 없지만 Sequence는 데이터를 삽입하기전에 다음 벨류를 가져올 수 있습니다.
- - Sequence는 새롭게 씨를 뿌릴수도 있고 스텝 사이즈를 언제든지 변경할 수 있지만 Identity는 새롭게 다시 씨를 뿌릴수는 있지만 스텝 크기를 변경할 수 없습니다.
+ - Sequence는 새롭게 씨를 뿌릴수도 있고 스텝 사이즈를 언제든지 변경할 수 있지만 Identity는 새롭게 다시 씨를 뿌릴수는 있지만 스텝 사이즈를 변경할 수 없습니다.
  - Sequence는 데이터베이스 전체 시퀀스 넘버를 생성할 수 있지만 Identity는 테이블에 묶여있습니다.
 
 이러한 차이점은 다음과 같이 최적화에서 차이나게 됩니다.
@@ -66,7 +66,7 @@ public class RestaurantOrderIdentity {
     private String test;
 }
 ```
-엔티티는 위와 같이 Id컬럼과 String test 컬럼 2개뿐이고 Id는 Identity 전략을 사용했습니다.
+엔티티는 위와 같이 Id컬럼과 test 컬럼 2개뿐이고 Id는 Identity 전략을 사용했습니다.
 
 ```
 @Test
@@ -85,6 +85,15 @@ public void givenIdentityStrategy() {
 ```
 트랜잭션을 시작하고 포문을 9번 돌려서 저장을 한 후 트랜잭션을 커밋합니다.
 
+<p align="center">
+  <img src="/images/identifier/identity_strategy_result.png" alt="book" width="1200"/>
+</p>  
+
+
+JPA는 persistence context에 sql문을 모아놓고 transaction이 commit될때 모든 sql문을 flush해서 최적화 효과를 누릴 수 있습니다.
+하지만 위 결과를 보면 persist 할때마다 insert sql문이 flush 되는것을 볼 수 있습니다.
+JPA optimazer의 효과를 못누리고 있는 것입니다.
+또한 JDBC batch api를 사용할 수 없다는 뜻입니다.
 
 
 ```
