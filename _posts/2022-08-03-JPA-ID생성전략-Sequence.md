@@ -18,9 +18,10 @@
 @GeneratedValue 어노테이션을 지정하지 않는다면 엔티티의 식별자는 필수적으로 수동으로 할당 되어야됩니다.  
 만약 엔티티가 third-party에 의해서 natural identifier가 할당된다면 @GeneratedValue 어노테이션을 지정할 필요가 없습니다.  
 
+#### 자연키 vs 대체키
 관계형 디비에서는 일반적으로 2개의 간단한 식별자를 지정할 수 있는데요
-  - Natural Keys, 이건 외부 시스템에의 의해서 유일함이 보장됩니다.(주민등록번호, 전화번호 등등)
-  - Surrogate Keys, IDENTITY, SEQUENCE와 같이 데이터베이스에 의해서 관리되는 키입니다.(Auto-increment, seqeunce 등등)
+  - Natural Keys :  이건 외부 시스템에의 의해서 유일함이 보장됩니다.(주민등록번호, 전화번호 등등)
+  - Surrogate Keys : IDENTITY, SEQUENCE와 같이 데이터베이스에 의해서 관리되는 키입니다.(Auto-increment, seqeunce 등등)
 
 저희가 지금 주제로 하고 있는 SEQUENCE는 Surrogate Keys에 해당됩니다.
 
@@ -40,15 +41,16 @@ GenerationType Enum은 4개의 엔티티 식별자 전략이 있습니다.
   -  AUTO 전략은 데이터 베이스따라서 위에 3개의 전략중 하나를 선택합니다.
 
 
-spring cloud contract vs pact
-https://martinfowler.com/articles/consumerDrivenContracts.html  
-https://www.techtarget.com/searchitoperations/definition/mutation-testing  
 
 3개의 전략중에서 성능 이슈가 있는 TABLE 전략을 제외하고 SEQUENCE 전략과 IDENTITY 전략 차이점은 다음과 같습니다.
  - Identity는 어플리케이션의 의해서 관리될수 없지만 Sequence는 어플리케이션 코드로 제어가 가능합니다.
  - 만약 컬럼이 Identity로 마크되어있다면 이 컬럼에 직접적으로 데이터를 넣을수 없지만 시퀀스 오브젝트는 테이블에 의존하지 않기 때문에 해당 컬럼에 어떤 데이터도 인서트 할 수 있습니다.
  - Identity는 데이터를 삽입하기전에 값을 가져올 수 없지만 Sequence는 데이터를 삽입하기전에 다음 벨류를 가져올 수 있습니다.
- - 
+ - Sequence는 새롭게 씨를 뿌릴수도 있고 스텝 사이즈를 언제든지 변경할 수 있지만 Identity는 새롭게 다시 씨를 뿌릴수는 있지만 스텝 크기를 변경할 수 없습니다.
+ - Sequence는 데이터베이스 전체 시퀀스 넘버를 생성할 수 있지만 Identity는 테이블에 묶여있습니다.
+
+이러한 차이점은 다음과 같이 최적화에서 차이나게 됩니다.
+
 
 <br />
 <br />
