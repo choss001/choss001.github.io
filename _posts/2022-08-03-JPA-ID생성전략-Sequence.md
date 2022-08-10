@@ -54,7 +54,71 @@
 
 다음과 같은 예제 코드가 있습니다.
 
+```
+@Entity
+public class RestaurantOrderIdentity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column
+    private String test;
+}
+```
+
+```
+@Test
+public void givenSequenceStrategy() {
+    Transaction transaction = session.beginTransaction();
+
+    for (int i = 0; i < 9; i++) {
+        session.persist(new RestaurantOrderSequence());
+        log.info("in for loop : {}", i);
+    }
+
+    log.info(" commit! ");
+    transaction.commit();
+}
+```
+
+```
+@Entity
+public class RestaurantOrderSequence {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hilo_sequence_generator")
+    @GenericGenerator(
+            name = "hilo_sequence_generator",
+            strategy = "sequence",
+            parameters = {
+                    @Parameter(name = "sequence_name", value = "hilo_seqeunce"),
+                    @Parameter(name = "initial_value", value = "1"),
+                    @Parameter(name = "increment_size", value = "5"),
+                    @Parameter(name = "optimizer", value = "hilo")
+            }
+    )
+    private Long id;
+
+    @Column
+    private String test;
+}
+```
+
+```
+@Test
+public void givenIdentityStrategy() {
+    Transaction transaction = session.beginTransaction();
+
+    for (int i = 0; i < 9; i++) {
+        session.persist(new RestaurantOrderIdentity());
+        log.info("in for loop : {}", i);
+    }
+
+    log.info(" commit! ");
+    transaction.commit();
+}
+
+```
 
 <br />
 <br />
