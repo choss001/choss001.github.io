@@ -91,9 +91,9 @@ public void givenIdentityStrategy() {
 
 
 JPA는 persistence context에 sql문을 모아놓고 transaction이 commit될때 모든 sql문을 flush해서 최적화 효과를 누릴 수 있습니다.
-하지만 위 결과를 보면 persist 할때마다 insert sql문이 flush 되는것을 볼 수 있습니다.
-JPA optimazer의 효과를 못누리고 있는 것입니다.
-또한 JDBC batch api를 사용할 수 없다는 뜻입니다.
+하지만 위 결과를 보면 persist 할때마다 각각의 insert sql문이 flush 되는것을 볼 수 있습니다.
+이렇게 각각의 insert sql문이 flush 됨으로써 database와 동기화가 된다면
+jdbc batch api 최적화를 누릴수 없게 됩니다.
 
 
 ```
@@ -117,6 +117,7 @@ public class RestaurantOrderSequence {
     private String test;
 }
 ```
+위 엔티티는 hilo라는 optimizer를 사용하고 초기 시작값은 1 increment_size는 5로 정했습니다.
 
 ```
 @Test
@@ -132,6 +133,21 @@ public void givenSequenceStrategy() {
     transaction.commit();
 }
 ```
+위 identity 전략을 사용한 똑같은 소스인데 저장하는 entity만 다릅니다.
+
+<p align="center">
+  <img src="/images/identifier/sequence_strategy_result.png" alt="book" width="1200"/>
+</p>  
+
+위 결과를 보면 아시겠지만 이번에는 commit 하기 전까지 insert sql문이 flush를 하지 않습니다.  
+hibernate가 sequence call을 해서 1-5까지 값을 가져와서 캐쉬에 저장하고 만약 6번째 값이 필요하면
+두번째 seqeunce call을 해서 6-10까지의 값을 가져옵니다.  
+따라서 9번의 포문이 돌았기 때문에 2번의 seqeunce call을 해서 cache에 저장해놓고
+마지막 commit 시점에 한꺼번에 insert sql문을 데이터베이스와 동기화 하는 결과입니다.  
+이렇게 하면 JDBC batch api 기능을 사용할 수 있어서 퍼포먼스가 매번 동기화 하는 identity 전략보다 우수합니다.
+다만 persistence context에 너무나 많은 sql문을 쌓아놓고 있으면 out of memory 에러가 날수도 있습니다.  
+
+
 
 <br />
 <br />
