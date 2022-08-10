@@ -54,6 +54,8 @@
 
 아이디 생성 전략중 Identity 전략을 사용한 소스 먼저 보겠습니다.
 
+#### Identity
+
 ```
 @Entity
 public class RestaurantOrderIdentity {
@@ -90,11 +92,13 @@ public void givenIdentityStrategy() {
 </p>  
 
 
-JPA는 persistence context에 sql문을 모아놓고 transaction이 commit될때 모든 sql문을 flush해서 최적화 효과를 누릴 수 있습니다.
-하지만 위 결과를 보면 persist 할때마다 각각의 insert sql문이 flush 되는것을 볼 수 있습니다.
+JPA는 persistence context에 sql문을 모아놓고 transaction이 commit될때 모든 sql문을 flush해서 최적화 효과를 누릴 수 있습니다.  
+하지만 위 결과를 보면 persist 할때마다 각각의 insert sql문이 flush 되는것을 볼 수 있습니다.  
 이렇게 각각의 insert sql문이 flush 됨으로써 database와 동기화가 된다면
-jdbc batch api 최적화를 누릴수 없게 됩니다.
+jdbc batch api 최적화를 누릴수 없게 됩니다.  
+또한 매번 insert가 실행될때마다 데이터베이스에 동기화(flush)하는 비용도 발생합니다.  
 
+#### Sequence
 
 ```
 @Entity
@@ -148,6 +152,11 @@ hibernate가 sequence call을 해서 1-5까지 값을 가져와서 캐쉬에 저
 다만 persistence context에 너무나 많은 sql문을 쌓아놓고 있으면 out of memory 에러가 날수도 있습니다.  
 
 
+만약 insert문이 소수라면 이 차이는 무시할만한 수준이지만 Spring batch를 사용해서 대용량 데이터를 insert한다면 이 차이는 무시하지 못할 수준이 될겁니다.  
+
+### 결론
+<br />
+SEQUENCE 전략을 사용하자.
 
 <br />
 <br />
