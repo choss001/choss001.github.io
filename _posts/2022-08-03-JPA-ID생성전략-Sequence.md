@@ -44,6 +44,12 @@ spring cloud contract vs pact
 https://martinfowler.com/articles/consumerDrivenContracts.html  
 https://www.techtarget.com/searchitoperations/definition/mutation-testing  
 
+3개의 전략중에서 성능 이슈가 있는 TABLE 전략을 제외하고 SEQUENCE 전략과 IDENTITY 전략 차이점은 다음과 같습니다.
+ - Identity는 어플리케이션의 의해서 관리될수 없지만 Sequence는 어플리케이션 코드로 제어가 가능합니다.
+ - 만약 컬럼이 Identity로 마크되어있다면 이 컬럼에 직접적으로 데이터를 넣을수 없지만 시퀀스 오브젝트는 테이블에 의존하지 않기 때문에 해당 컬럼에 어떤 데이터도 인서트 할 수 있습니다.
+ - Identity는 데이터를 삽입하기전에 값을 가져올 수 없지만 Sequence는 데이터를 삽입하기전에 다음 벨류를 가져올 수 있습니다.
+ - 
+
 <br />
 <br />
 <br />
@@ -54,3 +60,4 @@ https://www.techtarget.com/searchitoperations/definition/mutation-testing
 [https://www.baeldung.com/hibernate-identifiers](https://www.baeldung.com/hibernate-identifiers)
 [https://discourse.hibernate.org/t/generated-value-strategy-auto/6481](https://discourse.hibernate.org/t/generated-value-strategy-auto/6481)  
 [https://www.baeldung.com/hi-lo-algorithm-hibernate](https://www.baeldung.com/hi-lo-algorithm-hibernate)  
+[https://dotnettutorials.net/lesson/difference-between-sequence-and-identity-in-sql-server/](https://dotnettutorials.net/lesson/difference-between-sequence-and-identity-in-sql-server/)
