@@ -26,7 +26,7 @@
 저희가 지금 주제로 하고 있는 SEQUENCE는 Surrogate Keys에 해당됩니다.
 
 
-GenerationType Enum은 4개의 엔티티 식별자 전략이 있습니다.
+### GenerationType Enum 
 
   - IDENTITY 전략은 MySQL의 AUTO_INCREMENT처럼 테이블 식별자 컬럼을 사용합니다..  
   만약 관계형 데이터베이스가 SEQUENCE를 지원한다면 JPA와 하이버네이트를 위해서 SEQUENCE를 쓰는 것이 추천됩니다  
@@ -41,6 +41,7 @@ GenerationType Enum은 4개의 엔티티 식별자 전략이 있습니다.
   -  AUTO 전략은 데이터 베이스따라서 위에 3개의 전략중 하나를 선택합니다.
 
 
+### Identity vs Sequence
 
 3개의 전략중에서 성능 이슈가 있는 TABLE 전략을 제외하고 SEQUENCE 전략과 IDENTITY 전략 차이점은 다음과 같습니다.
  - Identity는 어플리케이션의 의해서 관리될수 없지만 Sequence는 어플리케이션 코드로 제어가 가능합니다.
@@ -50,6 +51,9 @@ GenerationType Enum은 4개의 엔티티 식별자 전략이 있습니다.
  - Sequence는 데이터베이스 전체 시퀀스 넘버를 생성할 수 있지만 Identity는 테이블에 묶여있습니다.
 
 이러한 차이점은 다음과 같이 최적화에서 차이나게 됩니다.
+
+다음과 같은 예제 코드가 있습니다.
+
 
 
 <br />
