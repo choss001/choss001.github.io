@@ -52,7 +52,7 @@
 
 이러한 차이점은 다음과 같이 최적화에서 차이나게 됩니다.
 
-다음과 같은 예제 코드가 있습니다.
+아이디 생성 전략중 Identity 전략을 사용한 소스 먼저 보겠습니다.
 
 ```
 @Entity
@@ -66,21 +66,26 @@ public class RestaurantOrderIdentity {
     private String test;
 }
 ```
+엔티티는 위와 같이 Id컬럼과 String test 컬럼 2개뿐이고 Id는 Identity 전략을 사용했습니다.
 
 ```
 @Test
-public void givenSequenceStrategy() {
+public void givenIdentityStrategy() {
     Transaction transaction = session.beginTransaction();
 
     for (int i = 0; i < 9; i++) {
-        session.persist(new RestaurantOrderSequence());
+        session.persist(new RestaurantOrderIdentity());
         log.info("in for loop : {}", i);
     }
 
     log.info(" commit! ");
     transaction.commit();
 }
+
 ```
+트랜잭션을 시작하고 포문을 9번 돌려서 저장을 한 후 트랜잭션을 커밋합니다.
+
+
 
 ```
 @Entity
@@ -106,18 +111,17 @@ public class RestaurantOrderSequence {
 
 ```
 @Test
-public void givenIdentityStrategy() {
+public void givenSequenceStrategy() {
     Transaction transaction = session.beginTransaction();
 
     for (int i = 0; i < 9; i++) {
-        session.persist(new RestaurantOrderIdentity());
+        session.persist(new RestaurantOrderSequence());
         log.info("in for loop : {}", i);
     }
 
     log.info(" commit! ");
     transaction.commit();
 }
-
 ```
 
 <br />
