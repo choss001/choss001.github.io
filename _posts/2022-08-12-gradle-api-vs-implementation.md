@@ -54,9 +54,12 @@ dependencies {
   코드 작성할때 실수로 사용하는 것을 방지
   -  **클래스 패스 정리** 복잡함 감소
 
+그래들을 사용하고 있다면 다음과 같은 task로 클래스 패스를 확인 할 수 있습니다.
+```
+./gradlew dependencies --configuration <compileClasspath | runtimeClasspath>
 ```
 
-```
+
 
 
 
