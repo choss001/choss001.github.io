@@ -65,6 +65,12 @@ dependencies {
 
 
 
+출처 : [https://tomgregory.com/gradle-implementation-vs-compile-dependencies/](https://tomgregory.com/gradle-implementation-vs-compile-dependencies/)  
+[https://docs.gradle.org/current/userguide/java_plugin.html](https://docs.gradle.org/current/userguide/java_plugin.html)  
+[https://www.tutorialspoint.com/gradle/gradle_plugins.htm](https://www.tutorialspoint.com/gradle/gradle_plugins.htm)  
+[https://medium.com/mindorks/implementation-vs-api-in-gradle-3-0-494c817a6fa](https://medium.com/mindorks/implementation-vs-api-in-gradle-3-0-494c817a6fa)  
+[https://docs.gradle.org/current/userguide/plugins.html](https://docs.gradle.org/current/userguide/plugins.html)
+
 
 
 
