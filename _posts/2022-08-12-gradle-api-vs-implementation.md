@@ -59,6 +59,10 @@ dependencies {
 ./gradlew dependencies --configuration <compileClasspath | runtimeClasspath>
 ```
 
+<p align="center">
+  <img src="/images/gradle_dependency_configuration/classpath_inspection_task.png" alt="book" width="800"/>
+</p>
+
 
 
 
