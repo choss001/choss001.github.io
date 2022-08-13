@@ -1,4 +1,4 @@
-# api vs implementation
+# Gradle dependency api vs implementation
 
 오늘은 평소 헷갈렸던 gradle에서 **api** dependency configuration과 **implementation** dependency configuration에 대해서 알아보려고 합니다.  
 
@@ -54,9 +54,22 @@ dependencies {
   코드 작성할때 실수로 사용하는 것을 방지
   -  **클래스 패스 정리** 복잡함 감소
 
+그래들을 사용하고 있다면 다음과 같은 task로 클래스 패스를 확인 할 수 있습니다.
+```
+./gradlew dependencies --configuration <compileClasspath | runtimeClasspath>
 ```
 
-```
+<p align="center">
+  <img src="/images/gradle_dependency_configuration/classpath_inspection_task.png" alt="book" width="800"/>
+</p>
+
+
+
+출처 : [https://tomgregory.com/gradle-implementation-vs-compile-dependencies/](https://tomgregory.com/gradle-implementation-vs-compile-dependencies/)  
+[https://docs.gradle.org/current/userguide/java_plugin.html](https://docs.gradle.org/current/userguide/java_plugin.html)  
+[https://www.tutorialspoint.com/gradle/gradle_plugins.htm](https://www.tutorialspoint.com/gradle/gradle_plugins.htm)  
+[https://medium.com/mindorks/implementation-vs-api-in-gradle-3-0-494c817a6fa](https://medium.com/mindorks/implementation-vs-api-in-gradle-3-0-494c817a6fa)  
+[https://docs.gradle.org/current/userguide/plugins.html](https://docs.gradle.org/current/userguide/plugins.html)
 
 
 
