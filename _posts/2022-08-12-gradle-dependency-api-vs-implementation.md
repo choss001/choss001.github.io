@@ -1,4 +1,4 @@
-# api vs implementation
+# Gradle dependency api vs implementation
 
 오늘은 평소 헷갈렸던 gradle에서 **api** dependency configuration과 **implementation** dependency configuration에 대해서 알아보려고 합니다.  
 
