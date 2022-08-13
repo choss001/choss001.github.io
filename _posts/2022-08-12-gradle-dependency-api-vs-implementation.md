@@ -54,6 +54,11 @@ dependencies {
   코드 작성할때 실수로 사용하는 것을 방지
   -  **클래스 패스 정리** 복잡함 감소
 
+<p align="center">
+  <img src="/images/gradle_dependency_configuration/gradle_clashpath_uml.png" alt="book" width="800"/>
+</p>
+
+
 그래들을 사용하고 있다면 다음과 같은 task로 클래스 패스를 확인 할 수 있습니다.
 ```
 ./gradlew dependencies --configuration <compileClasspath | runtimeClasspath>
@@ -61,6 +66,32 @@ dependencies {
 
 <p align="center">
   <img src="/images/gradle_dependency_configuration/classpath_inspection_task.png" alt="book" width="800"/>
+</p>
+
+
+### 테스트를 위한 디펜던시 구성  
+그래들 자바 플러긴은 **testRuntimeOnly**, **testImplementation**, 그리고 **testCompileOnly** 디펜던시 구성을 제공합니다.  
+우리가 이러한 디펜던시 구성을 추가함에 따라 어떻게 테스트 compile 그리고 runtime 클래스패스가 생성이 될지 결정됩니다.  
+이러한 테스트 구성은 테스트 구성이 아닌것으로 부터 상속되어지고 무엇보다도 테스트코드는 non-test 코드를 필요로합니다.  
+  
+  
+만약 다른 그래들 프로젝트가 사용할 라이브러를 작성한다면 아마도 **Java Library Plugin**을 사용해서 작성하기를 원할지 모릅니다.  
+최상위에는 이미 implementation 구성이 설정되어있는 이 플러긴은 추가적인 구성을 추가합니다.   
+
+그래들 프로젝트가 사용하는 자바 라이브러리 플러그가 내장된 프로젝트는 다음 사항이 적용됩니다.
+
+
+
+
+
+
+
+  
+
+
+
+<p align="center">
+  <img src="/images/gradle_dependency_configuration/gradle_clashpath_test_uml.png" alt="book" width="800"/>
 </p>
 
 
