@@ -183,7 +183,7 @@ SEQUENCE 전략을 사용하자.
 
 출처 : [https://vladmihalcea.com/jpa-entity-identifier-sequence/](https://vladmihalcea.com/jpa-entity-identifier-sequence/)  
 [https://vladmihalcea.com/hibernate-hidden-gem-the-pooled-lo-optimizer/](https://vladmihalcea.com/hibernate-hidden-gem-the-pooled-lo-optimizer/)  
-[https://www.baeldung.com/hibernate-identifiers](https://www.baeldung.com/hibernate-identifiers)
+[https://www.baeldung.com/hibernate-identifiers](https://www.baeldung.com/hibernate-identifiers)  
 [https://discourse.hibernate.org/t/generated-value-strategy-auto/6481](https://discourse.hibernate.org/t/generated-value-strategy-auto/6481)  
 [https://www.baeldung.com/hi-lo-algorithm-hibernate](https://www.baeldung.com/hi-lo-algorithm-hibernate)  
-[https://dotnettutorials.net/lesson/difference-between-sequence-and-identity-in-sql-server/](https://dotnettutorials.net/lesson/difference-between-sequence-and-identity-in-sql-server/)
+[https://dotnettutorials.net/lesson/difference-between-sequence-and-identity-in-sql-server/](https://dotnettutorials.net/lesson/difference-between-sequence-and-identity-in-sql-server/)  
