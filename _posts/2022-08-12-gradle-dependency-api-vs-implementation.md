@@ -200,7 +200,48 @@ dependencies {
 }
 ```
 
-이제 만약 
+이제 만약 앱 모듈에서부터 LibraryC 를 접근하려고 하면 다음과 같이 에러를 던질것입니다.
+
+<p align="center">
+  <img src="/images/gradle_dependency_configuration/LibraryC_can't_access.png" alt="book" width="800"/>
+</p>  
+  
+만약 api 대신에 implementation을 쓴다면 앱 모듈에서부터 바로 LibraryC를 접근할수 없다는 뜻을 의미합니다.  
+그렇다면 이것의 이점은 무엇일까요??
+</br>
+</br>
+
+#### Implementation vs api  
+첫번째 시나리오는 다음과 같습니다.  
+LibraryD는 api로 컴파일되고 LibraryD의 구현체가 바뀐다면 그래들은 LibraryD와 LibraryB를 모두 리컴파일하고 LibraryB를 사용하는 다른 모든 모듈은 LibraryD를 사용할수 있습니다.
+<p align="center">
+  <img src="/images/gradle_dependency_configuration/first_scenario.png" alt="book" width="800"/>
+</p>  
+</br>
+</br>
+
+
+
+하지만 두번째 시나리오에서는  
+만약 LibraryC가 변한다고 해도 그래들은 단지 LibraryC만 리컴파일합니다. 따라서 다른 모듈은 LibraryC를 바로 사용할수 없게 됩니다.  
+<p align="center">
+  <img src="/images/gradle_dependency_configuration/second_scenario.png" alt="book" width="800"/>
+</p>  
+</br>
+</br>
+
+만약 우리가 엄청나게 많은 모듈을 갖고있다면 이 전략은 빌드 속도를 현저히 증가 시킬수 있습니다.  
+</br>
+</br>
+
+
+
+#### 요약  
+모든 **compile**을 전부 **implementation**으로 바꿔서 빌드를 합니다.  만약 빌드가 성공적으로 된다면 아주 잘된것이고  
+만약 dependency가 부족해보인다면 그때 그러한 라이브러리들을 **api** 키워드로 바꾸면 됩니다.
+
+
+
 
 
 
