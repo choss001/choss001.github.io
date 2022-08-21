@@ -77,19 +77,11 @@ dependencies {
   <img src="/images/gradle_dependency_configuration/gradle_classpath_test_uml.png" alt="book" width="800"/>
 </p>  
 
-</br>
-</br>
-
 ### 지금까지의 내용 빠른 요약
 
 **Rule 1** : complie보다는 implementation을 쓰십시오 compile은 Gradle 7+에서 삭제됐습니다.  
 
 **Rule 2** : 만약 compile과 runtime 클래스 패스가 둘다 필요하다면 implementation을 쓰고 아니면 compileOnly 나 runtimeOnly를 고려해 보십시오.  
-
-</br>
-</br>
-
-
 
 
 이제 주제의 본론인 Api vs Implementation에 대해서 설명하려고 합니다.
