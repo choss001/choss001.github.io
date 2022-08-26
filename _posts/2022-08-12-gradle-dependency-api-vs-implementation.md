@@ -200,8 +200,7 @@ dependencies {
   
 만약 api 대신에 implementation을 쓴다면 앱 모듈에서부터 바로 LibraryC를 접근할수 없다는 뜻을 의미합니다.  
 그렇다면 이것의 이점은 무엇일까요??
-</br>
-</br>
+
 
 #### Implementation vs api  
 첫번째 시나리오는 다음과 같습니다.  
@@ -209,8 +208,6 @@ LibraryD는 api로 컴파일되고 LibraryD의 구현체가 바뀐다면 그래�
 <p align="center">
   <img src="/images/gradle_dependency_configuration/first_scenario.png" alt="book" width="800"/>
 </p>  
-</br>
-</br>
 
 
 
@@ -219,12 +216,9 @@ LibraryD는 api로 컴파일되고 LibraryD의 구현체가 바뀐다면 그래�
 <p align="center">
   <img src="/images/gradle_dependency_configuration/second_scenario.png" alt="book" width="800"/>
 </p>  
-</br>
-</br>
+
 
 만약 우리가 엄청나게 많은 모듈을 갖고있다면 이 전략은 빌드 속도를 현저히 증가 시킬수 있습니다.  
-</br>
-</br>
 
 
 
