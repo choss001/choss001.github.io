@@ -1,4 +1,4 @@
-# 유비쿼터스란 무엇인가  
+# 유비쿼터스 랭귀지란 무엇인가  
 
 에릭 에반스의 Domain driven design 책을 읽다가 유비쿼터스 랭귀지에 대한 내용이 나오는데  
 
@@ -31,7 +31,7 @@
 - 유비쿼터스 랭귀지는 도메인 전문가로부터 부정확함과 모순을 제거한다.
 - 유비쿼터스 랭귀지는 도메인 전문가로부터 온 비즈니스 랭귀지가 아니다.
 - 유비쿼터스 랭귀지는 산업 현장에서 쓰이는 랭귀지가 아니다.
-- 유비쿼터스 랭귀지는 시간이 지남에 따라 진화하며 한번의 미팅으로 전부 정의되어지는게 아니다.'
+- 유비쿼터스 랭귀지는 시간이 지남에 따라 진화하며 한번의 미팅으로 전부 정의되어지는게 아니다.
 - 유비쿼터스 랭귀지의 부분이 아닌 컨셉은 거부되어야된다.
 
 ### 흔한 문제
@@ -107,7 +107,29 @@ public class People : Entity
         ...
     }
 }
-```
+```  
+이 코드를 보면 유비쿼터스 랭귀지를 반영했다고 느껴지지 않습니다.  
 
-https : https://thedomaindrivendesign.io/developing-the-ubiquitous-language/
+Value Object, Domain Service, Repositories, Commands, Events 등등 이것들은 유비쿼터스 랭귀지로 표현되어야 합니다.  
+
+다음 예제는 유비쿼터스 랭귀지가 반영된 코드입니다.  
+
+```
+public class Client : Entity
+{
+    public string Name { get; private set; }
+    public string Email { get; private set; }
+    ...
+
+    public void ChangeEmail(string email)
+    {
+        Email = email;
+    }
+}
+```  
+
+
+### 결론
+도메인 모델의 유비쿼터스 랭귀지를 토론하고, 찾고, 컨셉화하고, 발전시키고, 말해보자.
+
 
