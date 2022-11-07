@@ -22,4 +22,27 @@ f(n) = 재귀 호출 외부에서 어떠한 일이 수행되어지는 코스트,
       이것은 문제를 나누는 코스트를 포함하고 솔루션을 합치는 코스트를 포함합니다.
       
 a ≥ 1 and b > 1 둘다 상수, f(n) is an asymptotically positive function.
+
 ```
+
+asymptotically positive function은 충분히 큰 n에 대해서 f(n) > 0 이라는것을 의미한다.
+
+```
+T(n) = aT(n/b) + f(n)
+
+where, T(n) has the following asymptotic bounds:
+
+    1. If f(n) = O(nlogb a-ϵ), then T(n) = Θ(nlogb a).
+
+    2. If f(n) = Θ(nlogb a), then T(n) = Θ(nlogb a * log n).
+
+    3. If f(n) = Ω(nlogb a+ϵ), then T(n) = Θ(f(n)).
+
+ϵ > 0 is a constant.
+```  
+위에 각각의 조건들은 다음과 같이 해석될 수 있습니다.  
+1. 만약 각각의 단계에서 하위 문제의 푸는 비용이 특정한 요소에 의해서 증가한다면  
+f(n)의 벨류는 nlogb 보다 작아진다 그러므로 시간복잡도는 마지막 단계의 비용의 영향을 받는다 ie. nlogb a
+3.
+
+
