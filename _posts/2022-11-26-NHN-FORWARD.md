@@ -39,7 +39,6 @@
 
 
 <p align="center">
-  <img src="/images/nhn_forward/20221124_084508.jpg" alt="book" width="650"/>
   <img src="/images/nhn_forward/20221124_084505.jpg" alt="book" width="650"/>
   <img src="/images/nhn_forward/20221124_084621.jpg" alt="book" width="650"/>
   <img src="/images/nhn_forward/20221124_085154.jpg" alt="book" width="650"/>
@@ -70,6 +69,16 @@
 제 이름은 김민철이 아니지만 고맙게도 이 분이 저에게 양보해주셔서 제가 참가할 수 있게 되었습니다.  
 다시 한번 저의 동료분과 이 분께 감사드립니다.  
 
+<br />  
+<br />  
+<p align="center">
+  <img src="/images/nhn_forward/20221124_114744.jpg" alt="book" width="650"/>
+</p> 
+일정표를 펼치면 이렇게 되어 있습니다.  
+<br />  
+
+<br />  
+
 <p align="center">
   <img src="/images/nhn_forward/20221124_094039.jpg" alt="book" width="650"/>
   <img src="/images/nhn_forward/20221124_094403.jpg" alt="book" width="650"/>
@@ -80,6 +89,56 @@
 
 <br />  
 <br />  
+
+<p align="center">
+  <img src="/images/nhn_forward/20221124_090758.jpg" alt="book" width="650"/>
+  <img src="/images/nhn_forward/20221124_095947.jpg" alt="book" width="650"/>
+</p> 
+<br />   
+
+코너는 시간별 트랙으로 나뉘어져 있는데 트랙 안은 이렇게 생겼습니다.  
+<br />
+<br />  
+
+
+<p align="center">
+  <img src="/images/nhn_forward/20221124_100125.jpg" alt="book" width="650"/>
+  <img src="/images/nhn_forward/20221124_100120.jpg" alt="book" width="650"/>
+</p>
+
+박근한 NHN 기술위원회 이사님입니다. 처음 키노트 강연을 이끌어주셨습니다.  
+
+<p align="center">
+  <img src="/images/nhn_forward/20221124_112459.jpg" alt="book" width="650"/>
+  <img src="/images/nhn_forward/1669451321357.jpg" alt="book" width="650"/>
+  <img src="/images/nhn_forward/1669451321396.jpg" alt="book" width="650"/>
+</p>  
+
+키노트가 끝나고 쉬는시간에 두레이 마스코트를 봤습니다.  
+저는 장난스러운 두레이의 마스코트를 보고 실제 마스코트는 저렇게 안생겼지만 한시적으로 웃기게 만들었나 하고 추측했는데  
+다음날 회사에서 두레이 홈페이지 보니까 진짜 마스코트 눈코입이 저렇게 생겼었습니다.  
+보통 귀엽게 만들지 않나?...  
+
+
+<p align="center">
+  <img src="/images/nhn_forward/20221124_114201.jpg" alt="book" width="650"/>
+  <img src="/images/nhn_forward/20221124_125746.jpg" alt="book" width="650"/>
+  <img src="/images/nhn_forward/20221124_130046.jpg" alt="book" width="650"/>
+  <img src="/images/nhn_forward/20221124_130051.jpg" alt="book" width="650"/>
+  <img src="/images/nhn_forward/20221124_130345.jpg" alt="book" width="650"/>
+  <img src="/images/nhn_forward/20221124_130347.jpg" alt="book" width="650"/>
+  <img src="/images/nhn_forward/20221124_130051.jpg" alt="book" width="650"/>
+  <img src="/images/nhn_forward/20221124_130051.jpg" alt="book" width="650"/>
+</p>  
+<br />  
+NHN CLOUD의 엘라스틱 서치의 강연을 듣게 되었습니다.  
+아무래도 제가 NHN DIQUEST 검색부서다보니까 이 분야가 관심있어서 듣게 됐었습니다.  
+왜 우리 같은 자회사 NHN 계열사인  
+
+
+
+
+
 
 
 
