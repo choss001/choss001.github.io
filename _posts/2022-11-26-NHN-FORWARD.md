@@ -1,6 +1,6 @@
 # NHN FORWARD  
 
-오늘은 우연한 기회로 같은 직장 동료분께서 NHN FORWARD 표를 구해다 주셔서 외근으로 NHN FORWARD를 참가하게 되었습니다.
+오늘은 우연한 기회로 같은 직장 동료분께서 NHN FORWARD 표를 구해다 주셔서 외근으로 NHN FORWARD를 참가하게 되었습니다. 
 
 
 <p align="center">
