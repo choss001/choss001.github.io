@@ -54,7 +54,8 @@ public class ConcurrentModificationExceptionExample {
 }
 ```
    
-향상된 포문을 내부적으로 Iterator를 사용해서 엘리먼트를 탐색하기때문에 위의 코드는 iterator 대신 Collection의 remove()메소드를 사용하기때문에 ConcurrentModificationException을 발생시킵니다.  
+향상된 포문은 내부적으로 Iterator를 사용해서 엘리먼트를 탐색합니다. 따라서 위의 코드는 iterator의 remove() 대신 Collection의 remove()메소드를 사용해서 ConcurrentModificationException을 발생시킵니다.  
+
    
 ```  
 Exception in thread "main" java.util.ConcurrentModificationException
