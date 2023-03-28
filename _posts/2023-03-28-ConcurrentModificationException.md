@@ -110,6 +110,10 @@ java8에서 소개된 해당 조건이 성립한다면 엘리먼트를 지우는
 <br />
 <br />
 
+## 요약   
+ConcurrentModificationException은 일반적으로 잘 발생하는 에러이다. 해당 에러를 피하기 위해서는 향상된 for문 대신 전통적인 for문을 사용하거나 Iterator의 remove를 사용하는 방법이 있다.  
+멀티쓰레드 환경에서는 자바에서 제공하는 ConcurrentHashMap이나 CopyOnWriteArrayList같은 클래스를 사용하면 좋다.
+
 
 출처 : https://rollbar.com/blog/java-concurrentmodificationexception/ 
 <br />
