@@ -3,6 +3,8 @@
 컬렉션으로 작업하다보면 ConcurrentModificationExeption은 일반적으로 잘 발생하는 에러입니다.  
 iterated될때 해당작업이 수정된다면 oncurrentModificationException은 fail-fast로 사용됩니다.
    
+## fail-fast   
+
 여기서 fail-fast는 쓰레드가 엘리먼트를 iterator로 탐색하는 도중에 엘리먼트가 수정된다면 즉시 에러를 발생시키는것을 의미합니다.  
 더 자세하게 말하자면 자바에 대해 아는것이 중요합니다. 일단 동시 프로세스를 수행하기 위해서는 쓰레드를 사용하는게 일반적입니다.  
 쓰레드는 여러 작업을 동시에 수행하기 위해서 분리된 수행할수 있는 main program을 의미합니다.  
@@ -13,11 +15,6 @@ iterated될때 해당작업이 수정된다면 oncurrentModificationException은
 요약하자면 fail-fast 데이터 오염을 방지하기 위한 행동입니다.  
    
 <br />
-<br />
-<br />
-<br />
-<br />
-   
    
 
 이 익셉션은 허락없이 동시에 수정이 시도될때 발생합니다.  
