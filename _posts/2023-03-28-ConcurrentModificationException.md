@@ -27,7 +27,8 @@ ConcurrentModificationException은 멀티쓰레드 환경에서도 싱글쓰레�
 
 ## ConcurrentModificationException 예제  
 
-여기에 
+향상된 포문을 사용할때 ArrayList의 remove()메소드를 사용해서 엘리먼트를 삭제시도할때 해당 에러가 발생하는 예제가 아래와 같이 있습니다.  
+
 
 
 ```
@@ -49,7 +50,39 @@ public class ConcurrentModificationExceptionExample {
         }
     }
 }
+```  
+향상된 포문을 내부적으로 Iterator를 사용해서 엘리먼트를 탐색하기때문에 위의 코드는 iterator 대신 Collection의 remove()메소드를 사용하기때문에 ConcurrentModificationException을 발생시킵니다.  
+
 ```
+Exception in thread "main" java.util.ConcurrentModificationException
+    at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
+    at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
+    at ConcurrentModificationExceptionExample.main(ConcurrentModificationExceptionExample.java:12)
+```  
+## ConcurrentModificationException을 피하는 방법  
+위의 익셉션은 향상된 포문 대신 전통적인 포문을 사용해서 해결할 수 있습니다. 전통적인 for문은 Collection의 Iterator를 사용하지 않기 때문에 ConcurrentModificationException을 발생시키지 않습니다.  
+```  
+import java.util.ArrayList;
+import java.util.List;
+
+public class ConcurrentModificationExceptionExample {
+    public static void main(String args[]) {
+        List<String> list = new ArrayList<>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        list.add("d");
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).equals("a")) {
+                list.remove(list.get(i));
+            }
+        }
+
+        System.out.println(list);
+    }
+}
+```  
 
 
 
