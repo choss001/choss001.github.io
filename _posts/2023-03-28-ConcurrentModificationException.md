@@ -68,6 +68,8 @@ Exception in thread "main" java.util.ConcurrentModificationException
    
 ## ConcurrentModificationException을 피하는 방법  
 위의 익셉션은 향상된 포문 대신 전통적인 포문을 사용해서 해결할 수 있습니다. 전통적인 for문은 Collection의 Iterator를 사용하지 않기 때문에 ConcurrentModificationException을 발생시키지 않습니다.  
+<br />
+<br />
 ```  
 import java.util.ArrayList;
 import java.util.List;
@@ -90,8 +92,26 @@ public class ConcurrentModificationExceptionExample {
     }
 }
 ```  
+ConcurrentModificationException은 Iterator에 속해있고 ArrayList의remove()메소드에 속해있지 않으므로 위으 코드는 다음과 같은 결과가 나옵니다.  
+<br />
+```  
+[b, c, d]
+```   
+위의 익셉션은 또한 Iterator.remove()메소드를 사용한다면 해결될 수 있습니다.   
+java8에서 소개된 해당 조건이 성립한다면 엘리먼트를 지우는 Collection.removeIf()메소드를 사용해서도 해결할 수 있습니다.  
 
+## 멀티쓰레드 환경에서 ConcurrentModificationException을 피하는 방법   
+
+멀티쓰레드 환경에서 해당 익셉션을 피하기 위해서는 특정한 준비가 필요합니다.  
+
+- collection 대신 array를 사용해서 탐색하기 - 이 방법은 스몰 사이즈 리스트에서는 잘 작동하지만 큰 사이즈에서는 퍼포먼스가 잘 나오지 않습니다.
+- `synchronized` block을 사용해서 컬렉션은 잠가버리기 - 이 방법은 다양한 목적의 멀티쓰레드 환경에서 가장 효과적이지 않은 방법일 수 있습니다.   
+- ConcurrentHashMap, CopyOnWriteArrayList와 같은 concurrent collection클래스를 사용하면 익셉션을 피하는데 도움이 될 수 있습니다.   
+
+
+<br />
+<br />
 
 
 출처 : https://rollbar.com/blog/java-concurrentmodificationexception/ 
-</br>
+<br />
