@@ -1,5 +1,3 @@
-<br/>  
-<br/>  
 gradle과 maven이 나오기 오래전 과거 JAR 파일을 어떻게 설정해줬을까요?  
 저는 maven과 gradle이 나온 후에 개발했기 때문에 잘 모르지만 프로젝트가 필요로 하는 모든 JAR file을 직접 다운로드했다고 합니다.  
 직접 필요로 하는 JAR file 뿐만 아니라 우리가 사용하는 dependency의 dependency파일 일일이 손으로 다운로드 했다고 합니다.  
@@ -16,7 +14,9 @@ gradle과 maven이 나오기 오래전 과거 JAR 파일을 어떻게 설정해�
   
 <br/>  
 <br/>  
-Dependenvy Pollution은 뭘까요?  
+
+## Dependenvy Pollution은 뭘까요?  
+
 <br/>  
 우리가 프로젝트 X를 가지고 있고 X는 라이브러리 A와 B를 의존하고 C는 X의 소비자라고 합시다.  
 
@@ -89,13 +89,25 @@ compile scope안에 있는 모든 dependency들은 그 아래 소비자에게 co
 
 ## Use the implementation Configuration  
 <br/>  
-그래들의 솔루션은 꽤 쉽습니다. 만약 우리가 complie-itme dependency를 가지고 있다면 우리는 compile 구성대신 implementation 구성을 추가하면 끝입니다. (compile 구성은 )
-
+그래들의 솔루션은 꽤 쉽습니다. 만약 우리가 complie-itme dependency를 가지고 있다면 우리는 compile 구성대신 implementation 구성을 추가하면 끝입니다. (compile 구성은 deprecated 되었습니다.)
+<br/>  
 <p align="center">
   <img src="/images/dependency_pollution/explicit-dependency_hu97c1dc90e7360b7561a55ffee52d9b8d_64625_700x0_r1esize_q90_box.jpg" alt="book" width="800"/>
+<p/>
+<br/>  
+만약 X에서 A로 가는 디펜던시가 implementation 구성으로 명시되었다면 C는 더이상 A를 compile-time denpendency시기에 참조 할 수 없습니다.  
+C는 더이상 실수로 A의 클래스들을 사용할 수 없다 만약 C가 A의 클래스들을 원한다면 우리는 A의 디펜던시를 명시적으로 선언해줘야 됩니다.  
+<br/>
+만약 우리가 compile-time dependency에 특정한 디펜던시를 노출시키고 싶으면 예를들면 X가 B의 클래스 즉 B의 Api를 사용하고 싶으면 api옵션이 있습니다.  
+<br/>  
 
+## 결론  
+<br/>  
+만약 우리가 고객에게 디펜던시를 노출시키면다면 그들은 아마도 그들의 코드에 대한 통제권을 잃을 수도 있습니다.  
+<br/>  
+이러한 디펜던시 누락을 유발할수 있는 상태를 체크하는 것은 어려운 작업처럼 보이지만  Gradle's implementation 구성과 함께라면 꽤 쉽습니다.  
 
+<br/>  
+<br/>  
 
-
-in favor of implementation 문장의 의미는 선호나 선택이 implementation를 위해서 만들어졌다는 뜻이나 다른것 대신
-출처 : https://reflectoring.io/gradle-pollution-free-dependencies/#whats-dependency-pollution
+<!-- 출처 : https://reflectoring.io/gradle-pollution-free-dependencies/#whats-dependency-pollution-->
