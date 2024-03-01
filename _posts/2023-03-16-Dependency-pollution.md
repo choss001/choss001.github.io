@@ -91,7 +91,11 @@ compile scope안에 있는 모든 dependency들은 그 아래 소비자에게 co
 </br>  
 그래들의 솔루션은 꽤 쉽습니다. 만약 우리가 complie-itme dependency를 가지고 있다면 우리는 compile 구성대신 implementation 구성을 추가하면 끝입니다. (compile 구성은 )
 
+<p align="center">
+  <img src="/images/dependency_pollution/explicit-dependency_hu97c1dc90e7360b7561a55ffee52d9b8d_64625_700x0_r1esize_q90_box.jpg" alt="book" width="800"/>
 
 
 
+
+in favor of implementation 문장의 의미는 선호나 선택이 implementation를 위해서 만들어졌다는 뜻이나 다른것 대신
 출처 : https://reflectoring.io/gradle-pollution-free-dependencies/#whats-dependency-pollution
